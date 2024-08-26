@@ -4,10 +4,11 @@ export const TodoList = ({todos = [], onDeleteTodo, onToggleTodo}) => {
     <ul className="list-group">
         {
             todos.map(todo => (
-                <li key={todo.id} className="list-group-item d-flex justify-content-between">
+                <li key={todo.id} aria-label="li" className="list-group-item d-flex justify-content-between">
                 <span
                  className={`"align-self-center" ${(todo.done) ? 'text-decoration-line-through': ''} `}
                  onClick={() => onToggleTodo(todo.id)}
+                 aria-label="span"
                 >
                   {todo.description}
                 </span>
